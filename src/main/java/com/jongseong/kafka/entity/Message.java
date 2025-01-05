@@ -6,3 +6,4 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public record Message(  Long id,
                         String message) {
 }
+

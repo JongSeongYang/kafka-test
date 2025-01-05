@@ -8,8 +8,11 @@ import org.springframework.stereotype.Component;
 public class OrderEventConsumer {
     @KafkaListener(topics = "order-events", groupId = "my-group")
     public void listenOrderEvents(OrderRequestEvent event) {
-        // 이벤트 처리 로직을 구현합니다.
         System.out.println("Received OrderRequestEvent: " + event);
-        //
+    }
+
+    @KafkaListener(topics = "message-events", groupId = "my-group")
+    public void listenMessageEvents(String message) {
+        System.out.println("Received listenMessageEvents: " + message);
     }
 }
